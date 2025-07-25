@@ -56,12 +56,12 @@ public class ToDo {
             while (true){
                 //teste
                 System.out.println("Você tem: "+NumerosDasNotas.size()+" Notas.");
-                System.out.println("Qual número da nota deseja atualizar?");
-                int notaASerAtualizada = input.nextInt();
+                int notaASerAtualizada = verificacao("Qual número da nota deseja atualizar?", input);
+                input.nextLine();
                 if(NumerosDasNotas.contains(notaASerAtualizada)){
                     System.out.println("Atualizando nota: "+notaASerAtualizada);
                     System.out.println("Digite o novo contéudo: ");
-                    String novaNota = input.next();
+                    String novaNota = input.nextLine();
                     this.lista.set(notaASerAtualizada-1,novaNota);
                     System.out.println("Atualizado.");
                     break;
@@ -76,6 +76,18 @@ public class ToDo {
 
 
 
+        }
+    }
+    public static int verificacao(String mensagem, Scanner input){
+        while (true){
+            try{
+                System.out.println(mensagem);
+                int option = input.nextInt();
+                return option;
+            }catch(Exception e){
+                System.out.println("Valor inválido.");
+                input.next();
+            }
         }
     }
 }
