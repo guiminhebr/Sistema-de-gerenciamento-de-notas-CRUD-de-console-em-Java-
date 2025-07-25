@@ -54,6 +54,7 @@ public class ToDo {
                 NumerosDasNotas.add(i+1);
             }
             while (true){
+                //teste
                 System.out.println("Você tem: "+NumerosDasNotas.size()+" Notas.");
                 System.out.println("Qual número da nota deseja atualizar?");
                 int notaASerAtualizada = input.nextInt();
