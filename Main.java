@@ -17,13 +17,15 @@ public class Main {
             System.out.println("1-Cadastrar Nota");
             System.out.println("2-Consultas Notas");
             System.out.println("3-Deletar Notas");
-            System.out.println("4-Sair");
+            System.out.println("4-Atualizar nota");
+            System.out.println("5-Sair");
             option = validacaoOpcao("Insira o número correspondente", input);
             switch (option) {
                 case 1 -> notas.adicionarNota();
                 case 2 -> notas.consultarNotas();
                 case 3 -> notas.deletarNotas();
-                case 4 -> {
+                case 4 -> notas.atualizarNota();
+                case 5 -> {
                     System.out.println("Saindo do programa...");
                     controle = -2;
                 }

@@ -40,7 +40,44 @@ public class ToDo {
     }
 
 
+    public void setLista(ArrayList<String> lista) {
+        this.lista = lista;
+    }
+
+    public void atualizarNota() {
+
+        if(this.lista.isEmpty()){
+            System.out.println("Não há nenhuma nota no sistema.");
+        }else {
+            ArrayList<Integer> NumerosDasNotas = new ArrayList<>();
+            for(int i = 0; i < this.lista.size(); i++){
+                NumerosDasNotas.add(i+1);
+            }
+            while (true){
+                System.out.println("Você tem: "+NumerosDasNotas.size()+" Notas.");
+                System.out.println("Qual número da nota deseja atualizar?");
+                int notaASerAtualizada = input.nextInt();
+                if(NumerosDasNotas.contains(notaASerAtualizada)){
+                    System.out.println("Atualizando nota: "+notaASerAtualizada);
+                    System.out.println("Digite o novo contéudo: ");
+                    String novaNota = input.next();
+                    this.lista.set(notaASerAtualizada-1,novaNota);
+                    System.out.println("Atualizado.");
+                    break;
+
+
+                }else {
+                    System.out.println("Essa nota não existe.");
                 }
+
+        }
+
+
+
+
+        }
+    }
+}
 
 
 
